@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DC7077 Feedback Surveys</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #0053e2 0%, #003da5 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .logo {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .link-button {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            color: #1a1a1a;
+            text-decoration: none;
+            padding: 16px 20px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .link-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .link-button:active {
+            transform: scale(0.98);
+        }
+
+        .link-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .link-content {
+            flex: 1;
+        }
+
+        .link-title {
+            display: block;
+            font-weight: 600;
+            color: #0053e2;
+        }
+
+        .link-desc {
+            display: block;
+            font-size: 13px;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        .link-arrow {
+            color: #ccc;
+            font-size: 18px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 12px;
+        }
+
+        .footer a {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Accessibility */
+        .link-button:focus {
+            outline: 3px solid #ffc220;
+            outline-offset: 2px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .link-button {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">📋</div>
+            <h1>DC7077 Feedback Surveys</h1>
+            <p>Select a survey below to share your feedback</p>
+        </header>
+
+        <nav class="links" aria-label="Survey links">
+            <a href="https://feedbackally.walmart.com/survey/YOUR_SURVEY_ID_1" class="link-button" target="_blank" rel="noopener">
+                <span class="link-icon">🚚</span>
+                <span class="link-content">
+                    <span class="link-title">Delivery Feedback</span>
+                    <span class="link-desc">Rate your delivery experience</span>
+                </span>
+                <span class="link-arrow">›</span>
+            </a>
+
+            <a href="https://feedbackally.walmart.com/survey/YOUR_SURVEY_ID_2" class="link-button" target="_blank" rel="noopener">
+                <span class="link-icon">📦</span>
+                <span class="link-content">
+                    <span class="link-title">Product Quality</span>
+                    <span class="link-desc">Report quality issues</span>
+                </span>
+                <span class="link-arrow">›</span>
+            </a>
+
+            <a href="https://feedbackally.walmart.com/survey/YOUR_SURVEY_ID_3" class="link-button" target="_blank" rel="noopener">
+                <span class="link-icon">⏰</span>
+                <span class="link-content">
+                    <span class="link-title">On-Time Performance</span>
+                    <span class="link-desc">Delivery timing feedback</span>
+                </span>
+                <span class="link-arrow">›</span>
+            </a>
+
+            <a href="https://feedbackally.walmart.com/survey/YOUR_SURVEY_ID_4" class="link-button" target="_blank" rel="noopener">
+                <span class="link-icon">👷</span>
+                <span class="link-content">
+                    <span class="link-title">Driver Feedback</span>
+                    <span class="link-desc">Rate driver professionalism</span>
+                </span>
+                <span class="link-arrow">›</span>
+            </a>
+
+            <a href="https://feedbackally.walmart.com/survey/YOUR_SURVEY_ID_5" class="link-button" target="_blank" rel="noopener">
+                <span class="link-icon">💬</span>
+                <span class="link-content">
+                    <span class="link-title">General Feedback</span>
+                    <span class="link-desc">Share any other comments</span>
+                </span>
+                <span class="link-arrow">›</span>
+            </a>
+        </nav>
+
+        <footer class="footer">
+            <p>DC7077 Operations · <a href="mailto:dc7077-feedback@walmart.com">Contact Us</a></p>
+        </footer>
+    </div>
+</body>
+</html>
