@@ -128,6 +128,43 @@
                 transition: none;
             }
         }
+
+        /* Off-shift links: grayed out, not clickable, no hover lift */
+        .link-button.shift-inactive {
+            background: #d1d5db;
+            cursor: not-allowed;
+            opacity: 0.55;
+            pointer-events: none;
+            box-shadow: none;
+        }
+        .link-button.shift-inactive .link-title {
+            color: #6b7280;
+        }
+        .link-button.shift-inactive .link-desc {
+            color: #9ca3af;
+        }
+        .link-button.shift-inactive .link-arrow {
+            color: #9ca3af;
+        }
+        .link-button.shift-inactive::after {
+            content: "\1F512"; /* lock emoji */
+            margin-left: 6px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        .shift-banner {
+            background: rgba(255, 194, 32, 0.15);
+            border: 1px solid rgba(255, 194, 32, 0.4);
+            color: #ffffff;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 13px;
+            text-align: center;
+            margin-bottom: 14px;
+        }
+        .shift-banner strong {
+            color: #ffc220;
+        }
     </style>
 </head>
 <body>
@@ -139,6 +176,7 @@
         </header>
 
         <nav class="links" aria-label="Survey links">
+            <div id="shiftBanner" class="shift-banner" hidden></div>
             <!-- Yard Truck Repair Form (added 2026-05) -->
             <a href="https://feedbackally.walmart.com/survey/-4Linum5Tyw6yhI/" class="link-button" target="_blank" rel="noopener">
                 <span class="link-icon">🚚</span>
@@ -173,7 +211,7 @@
                 <p style="color: rgba(255,255,255,0.8); font-size: 12px; font-weight: 600; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;">📅 Weekday Indirect Submissions</p>
             </div>
 
-            <a href="https://feedbackally.walmart.com/survey/wnRIitpqKUpqtNK/" class="link-button" target="_blank" rel="noopener">
+            <a href="https://feedbackally.walmart.com/survey/wnRIitpqKUpqtNK/" class="link-button" data-shift-group="weekday" target="_blank" rel="noopener">
                 <span class="link-icon">📋</span>
                 <span class="link-content">
                     <span class="link-title">DS1 Indirect Submission</span>
@@ -182,7 +220,7 @@
                 <span class="link-arrow">›</span>
             </a>
 
-            <a href="https://feedbackally.walmart.com/survey/DdE5cBsFOabiyuX/" class="link-button" target="_blank" rel="noopener">
+            <a href="https://feedbackally.walmart.com/survey/DdE5cBsFOabiyuX/" class="link-button" data-shift-group="weekday" target="_blank" rel="noopener">
                 <span class="link-icon">📋</span>
                 <span class="link-content">
                     <span class="link-title">FDDS1&2 Indirect Submission</span>
@@ -191,7 +229,7 @@
                 <span class="link-arrow">›</span>
             </a>
 
-            <a href="https://feedbackally.walmart.com/survey/UPYCumpRX4w_LGe/" class="link-button" target="_blank" rel="noopener">
+            <a href="https://feedbackally.walmart.com/survey/UPYCumpRX4w_LGe/" class="link-button" data-shift-group="weekday" target="_blank" rel="noopener">
                 <span class="link-icon">📋</span>
                 <span class="link-content">
                     <span class="link-title">MPS2 Indirect Submission</span>
@@ -205,7 +243,7 @@
                 <p style="color: rgba(255,255,255,0.8); font-size: 12px; font-weight: 600; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;">🏖️ Weekend Indirect Submissions</p>
             </div>
 
-            <a href="https://feedbackally.walmart.com/survey/C-j4UtY-oMBzXr4/" class="link-button" target="_blank" rel="noopener">
+            <a href="https://feedbackally.walmart.com/survey/C-j4UtY-oMBzXr4/" class="link-button" data-shift-group="weekend" target="_blank" rel="noopener">
                 <span class="link-icon">📋</span>
                 <span class="link-content">
                     <span class="link-title">DS4 Indirect Submission</span>
@@ -214,7 +252,7 @@
                 <span class="link-arrow">›</span>
             </a>
 
-            <a href="https://feedbackally.walmart.com/survey/DO8LyuKGE-Dd7nq/" class="link-button" target="_blank" rel="noopener">
+            <a href="https://feedbackally.walmart.com/survey/DO8LyuKGE-Dd7nq/" class="link-button" data-shift-group="weekend" target="_blank" rel="noopener">
                 <span class="link-icon">📋</span>
                 <span class="link-content">
                     <span class="link-title">FDDS4&5 Indirect Submission</span>
@@ -223,7 +261,7 @@
                 <span class="link-arrow">›</span>
             </a>
 
-            <a href="https://feedbackally.walmart.com/survey/4Wgw-SDdfvYzvhw/" class="link-button" target="_blank" rel="noopener">
+            <a href="https://feedbackally.walmart.com/survey/4Wgw-SDdfvYzvhw/" class="link-button" data-shift-group="weekend" target="_blank" rel="noopener">
                 <span class="link-icon">📋</span>
                 <span class="link-content">
                     <span class="link-title">MPS5 Indirect Submission</span>
@@ -232,7 +270,7 @@
                 <span class="link-arrow">›</span>
             </a>
 
-            <a href="https://feedbackally.walmart.com/survey/rcBEn3BKcmL-VGB/" class="link-button" target="_blank" rel="noopener">
+            <a href="https://feedbackally.walmart.com/survey/rcBEn3BKcmL-VGB/" class="link-button" data-shift-group="weekend" target="_blank" rel="noopener">
                 <span class="link-icon">📋</span>
                 <span class="link-content">
                     <span class="link-title">MPR4 Indirect Submission</span>
@@ -254,5 +292,41 @@
             </details>
         </footer>
     </div>
+    <script>
+      // Day-based shift gating.
+      // Tue–Fri (2,3,4,5)  → Shift 1&2 active  (data-shift-group="weekday")
+      // Sat–Mon (6,0,1)    → Shift 4&5 active  (data-shift-group="weekend")
+      (function gateLinksByShift() {
+        var dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        var today = new Date();
+        var dow = today.getDay();
+        var weekdayShift = (dow >= 2 && dow <= 5);   // Tue–Fri
+        var activeGroup = weekdayShift ? "weekday" : "weekend";
+        var activeLabel = weekdayShift ? "Shifts 1 & 2" : "Shifts 4 & 5";
+
+        var banner = document.getElementById("shiftBanner");
+        if (banner) {
+          banner.hidden = false;
+          banner.innerHTML = "Today is <strong>" + dayNames[dow] + "</strong> \u2014 "
+            + "<strong>" + activeLabel + "</strong> surveys are active. "
+            + "Off-shift links are locked.";
+        }
+
+        document.querySelectorAll("a.link-button[data-shift-group]").forEach(function (el) {
+          var group = el.getAttribute("data-shift-group");
+          if (group !== activeGroup) {
+            el.classList.add("shift-inactive");
+            el.setAttribute("aria-disabled", "true");
+            el.setAttribute("tabindex", "-1");
+            el.setAttribute("title", "Available on " + (group === "weekday" ? "Tue\u2013Fri" : "Sat\u2013Mon") + " only");
+            // Safety net in case CSS pointer-events is overridden by a browser
+            el.addEventListener("click", function (e) {
+              e.preventDefault();
+              e.stopPropagation();
+            });
+          }
+        });
+      })();
+    </script>
 </body>
 </html>
